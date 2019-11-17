@@ -1,0 +1,33 @@
+<templateSet group="other">
+  <template name="kt1" value="hashMap.put(Strings.KEY_KT1, Strings.KT1);" description="HashMap KT1" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="kt" value="$kt1 = $_POST['kt1'];" description="" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="GROOVY" value="false" />
+      <option name="HTML" value="false" />
+      <option name="JAVA_CODE" value="false" />
+      <option name="JSON" value="false" />
+      <option name="KOTLIN" value="false" />
+      <option name="OTHER" value="true" />
+      <option name="XML" value="false" />
+      <option name="c" value="false" />
+      <option name="cpp" value="false" />
+    </context>
+  </template>
+  <template name="wkt" value="WHERE kt1 ='$kt1'" description="Where kt1 = '$kt1'" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="GROOVY" value="false" />
+      <option name="HTML" value="false" />
+      <option name="JAVA_CODE" value="false" />
+      <option name="JSON" value="false" />
+      <option name="KOTLIN" value="false" />
+      <option name="OTHER" value="true" />
+      <option name="XML" value="false" />
+      <option name="c" value="false" />
+      <option name="cpp" value="false" />
+    </context>
+  </template>
+</templateSet>

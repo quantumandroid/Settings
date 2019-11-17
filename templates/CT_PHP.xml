@@ -1,0 +1,110 @@
+<templateSet group="CT_PHP">
+  <template name="php_select_all" value="$sql = $_POST['sql'];&#10;$query = mysqli_query($con, $sql);&#10;$result = array();&#10;&#10;while ($row = mysqli_fetch_assoc($query))&#10;&#9;{&#10;&#9;$result[] = $row;&#10;&#9;}&#10;&#10;echo json_encode(array(&#10;&#9;'result' =&gt; $result&#10;));" description="Select all" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GROOVY" value="false" />
+      <option name="HTML" value="false" />
+      <option name="JAVA_CODE" value="false" />
+      <option name="JSON" value="false" />
+      <option name="KOTLIN" value="false" />
+      <option name="OTHER" value="true" />
+      <option name="XML" value="false" />
+      <option name="c" value="false" />
+      <option name="cpp" value="false" />
+    </context>
+  </template>
+  <template name="php_case" value="case &quot;$var1$&quot;: //$var2$&#10;&#9;$var3$&#10;break;" description="case" toReformat="false" toShortenFQNames="true">
+    <variable name="var1" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="var2" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="var3" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GROOVY" value="false" />
+      <option name="HTML" value="false" />
+      <option name="JAVA_CODE" value="false" />
+      <option name="JSON" value="false" />
+      <option name="KOTLIN" value="false" />
+      <option name="OTHER" value="true" />
+      <option name="XML" value="false" />
+      <option name="c" value="false" />
+      <option name="cpp" value="false" />
+    </context>
+  </template>
+  <template name="php_delete" value="$sql = $_POST['sql'];&#10;&#10;if (mysqli_query($con, $sql))&#10;&#9;{&#10;&#9;echo 'Deleted Successfully';&#10;&#9;}&#10;  else&#10;&#9;{&#10;&#9;echo 'failed to delete';&#10;&#9;}" description="php delete" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GROOVY" value="false" />
+      <option name="HTML" value="false" />
+      <option name="JAVA_CODE" value="false" />
+      <option name="JSON" value="false" />
+      <option name="KOTLIN" value="false" />
+      <option name="OTHER" value="true" />
+      <option name="XML" value="false" />
+      <option name="c" value="false" />
+      <option name="cpp" value="false" />
+    </context>
+  </template>
+  <template name="php_select_one" value="$sql = $_POST['sql'];&#10;$r = mysqli_query($con, $sql);&#10;$result = array();&#10;$row = mysqli_fetch_assoc($r);&#10;$result[] = $row;&#10;echo json_encode(array(&#10;&#9;'result' =&gt; $result&#10;));" description="php select" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GROOVY" value="false" />
+      <option name="HTML" value="false" />
+      <option name="JAVA_CODE" value="false" />
+      <option name="JSON" value="false" />
+      <option name="KOTLIN" value="false" />
+      <option name="OTHER" value="true" />
+      <option name="XML" value="false" />
+      <option name="c" value="false" />
+      <option name="cpp" value="false" />
+    </context>
+  </template>
+  <template name="php_save" value="$sql = $_POST['sql'];&#10;&#10;if (mysqli_query($con, $sql))&#10;&#9;{&#10;&#9;echo 'Saved Successfully';&#10;&#9;}&#10;  else&#10;&#9;{&#10;&#9;echo 'Could Not Save  Try Again Later';&#10;&#9;}" description="insert and update" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GROOVY" value="false" />
+      <option name="HTML" value="false" />
+      <option name="JAVA_CODE" value="false" />
+      <option name="JSON" value="false" />
+      <option name="KOTLIN" value="false" />
+      <option name="OTHER" value="true" />
+      <option name="XML" value="false" />
+      <option name="c" value="false" />
+      <option name="cpp" value="false" />
+    </context>
+  </template>
+  <template name="php_validate" value="$ks1 = $_POST['KS1'];&#10;$t2 = $_POST['T2'];&#10;$t3 = $_POST['T3'];&#10;&#10;// Creating sql query&#10;&#10;$sql = &quot;SELECT KS1,T2,T3 FROM tb2 WHERE BINARY T1 = BINARY '$t2' AND BINARY T3 = BINARY '$t3' AND BINARY KS1 = BINARY '$ks1'&quot;;&#10;$check = mysqli_fetch_array(mysqli_query($con, $sql));&#10;&#10;if (isset($check))&#10;&#9;{&#10;&#9;echo 'success';&#10;&#9;}&#10;  else&#10;&#9;{&#10;&#9;echo 'failure';&#10;&#9;}" description="php validate" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GROOVY" value="false" />
+      <option name="HTML" value="false" />
+      <option name="JAVA_CODE" value="false" />
+      <option name="JSON" value="false" />
+      <option name="KOTLIN" value="false" />
+      <option name="OTHER" value="true" />
+      <option name="XML" value="false" />
+      <option name="c" value="false" />
+      <option name="cpp" value="false" />
+    </context>
+  </template>
+  <template name="php" value="&lt;?php&#10;&#10;// connect to mysql database first&#10;&#10;define('HOST', 'localhost'); //host&#10;define('USER', 'root'); //username&#10;define('PASS', ''); //password&#10;define('DB', '$var1$'); //Database name&#10;$con = mysqli_connect(HOST, USER, PASS, DB) or die('Unable to Connect');&#10;&#10;if ($_SERVER['REQUEST_METHOD'] == 'POST')&#10;&#9;{&#10;&#9;$request_code = $_POST['request_code'];&#10;&#9;switch ($request_code)&#10;&#9;&#9;{&#10;&#9;case &quot;101&quot;: // Activity_Method&#10;&#9;&#9;break;&#10;&#10;&#9;default:&#10;&#9;&#9;echo &quot;something goes wrong&quot;;&#10;&#9;&#9;} // switch closed&#10;&#9;} // if close&#10;mysqli_close($con);&#10;?&gt;&#10;" description="php" toReformat="true" toShortenFQNames="true">
+    <variable name="var1" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GROOVY" value="false" />
+      <option name="HTML" value="false" />
+      <option name="JAVA_CODE" value="false" />
+      <option name="JSON" value="false" />
+      <option name="KOTLIN" value="false" />
+      <option name="OTHER" value="true" />
+      <option name="XML" value="false" />
+      <option name="c" value="false" />
+      <option name="cpp" value="false" />
+    </context>
+  </template>
+  <template name="php_check" value="$sql = $_POST['sql'];&#10;$check = mysqli_fetch_array(mysqli_query($con, $sql));&#10;&#10;if (isset($check))&#10;&#9;{&#10;&#9;echo 'success';&#10;&#9;}&#10;  else&#10;&#9;{&#10;&#9;echo 'failure';&#10;&#9;}" description="php check exist" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GROOVY" value="false" />
+      <option name="HTML" value="false" />
+      <option name="JAVA_CODE" value="false" />
+      <option name="JSON" value="false" />
+      <option name="KOTLIN" value="false" />
+      <option name="OTHER" value="true" />
+      <option name="XML" value="false" />
+      <option name="c" value="false" />
+      <option name="cpp" value="false" />
+    </context>
+  </template>
+</templateSet>

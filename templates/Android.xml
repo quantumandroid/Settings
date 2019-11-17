@@ -1,0 +1,27 @@
+<templateSet group="Android">
+  <template name="b" value="$button$ = (Button)findViewById(R.id.$id$);" description="button initialse" toReformat="false" toShortenFQNames="true">
+    <variable name="button" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="id" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="t" value="$textView$ = (TextView)findViewById(R.id.$id$);" description="TextView Initialise" toReformat="false" toShortenFQNames="true">
+    <variable name="textView" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="id" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="Toast" value="android.widget.Toast.makeText($context$, &quot;$text$&quot;, Toast.LENGTH_LONG).show();" description="Create a new Toast" toReformat="true" toShortenFQNames="true">
+    <variable name="context" expression="variableOfType(&quot;android.content.Context&quot;)" defaultValue="" alwaysStopAt="false" />
+    <variable name="text" expression="" defaultValue="" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="fbc" value="$cast$ = findViewById(R.id.$resId$);" description="findViewById with cast" toReformat="true" toShortenFQNames="true">
+    <variable name="cast" expression="expectedType()" defaultValue="" alwaysStopAt="true" />
+    <variable name="resId" expression="completeSmart()" defaultValue="" alwaysStopAt="true" />
+    <context />
+  </template>
+</templateSet>

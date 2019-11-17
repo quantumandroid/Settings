@@ -1,0 +1,33 @@
+<templateSet group="CT_SQL_FOR_JAVA">
+  <template name="sql_insert" value="String sql = &quot;INSERT INTO $table$ (t2,t3,kt1,vr1) VALUES('$t2','$t3','$kt1','$vr1')&quot;;" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="table" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="sql_select" value="String sql = &quot;SELECT $selection$ FROM $table$ WHERE $condition$&quot;;" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selection" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="table" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="condition" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="sql_update" value="String sql = &quot;UPDATE $table$ SET t3 = '$t3' WHERE t2 = '$t2' AND kt1 = '$kt1'&quot;;" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="table" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="sql_validate" value="String sql = &quot;SELECT t2,t3 FROM tb2 WHERE BINARY t2 = BINARY '$t2' AND BINARY t3 = BINARY '$t3' AND BINARY kt1 = BINARY '$kt1'&quot;;&#10;" description="" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="sql_delete" value="String sql = &quot;DELETE FROM $tb$ WHERE ID1 =&quot; + id;" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="tb" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+</templateSet>

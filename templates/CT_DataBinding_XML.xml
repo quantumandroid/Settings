@@ -1,0 +1,8 @@
+<templateSet group="CT_DataBinding_XML">
+  <template name="layout" value="&lt;layout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&#10;    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;&#10;    xmlns:tools=&quot;http://schemas.android.com/tools&quot;&gt;&#10;&#10;    &lt;data&gt;&#10;&#10;        &lt;variable&#10;            name=&quot;data&quot;&#10;            type=&quot;com.databinding.model.Person&quot; /&gt;&#10;        &lt;!--TODO USE:-  android:text=&quot;@={data.name}&quot; --&gt;&#10;&#10;        &lt;variable&#10;            name=&quot;clickListener&quot;&#10;            type=&quot;android.view.View.OnClickListener&quot; /&gt;&#10;        &lt;!--TODO USE:-  android:onClick=&quot;@{(view) -&gt; clickListener.onClick(view)}&quot;  --&gt;&#10;&#10;        &lt;variable&#10;            name=&quot;callback&quot;&#10;            type=&quot;com.databinding.listeners.OnShowData&quot; /&gt;&#10;        &lt;!--TODO USE:-  android:onClick=&quot;@{() -&gt; callback.onShow(data)}&quot;  --&gt;&#10;    &#10;    &lt;/data&gt;&#10;    &#10;    $layout$&#10;    &#10;&lt;/layout&gt; " description="Data Binding layout tag template" toReformat="true" toShortenFQNames="true">
+    <variable name="layout" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+</templateSet>

@@ -1,0 +1,51 @@
+<toolSet name="External Tools">
+  <tool name="Activity Excel" showInMainMenu="false" showInEditor="false" showInProject="false" showInSearchPopup="false" disabled="false" useConsole="false" showConsoleOnStdOut="false" showConsoleOnStdErr="false" synchronizeAfterRun="true">
+    <exec>
+      <option name="COMMAND" value="C:\Program Files (x86)\Microsoft Office\Office12\EXCEL.EXE" />
+      <option name="PARAMETERS" value="D:\ACTIVITY\ACTIVITY.xls" />
+      <option name="WORKING_DIRECTORY" value="D:/ACTIVITY" />
+    </exec>
+  </tool>
+  <tool name="cmd" showInMainMenu="false" showInEditor="false" showInProject="false" showInSearchPopup="false" disabled="false" useConsole="true" showConsoleOnStdOut="false" showConsoleOnStdErr="false" synchronizeAfterRun="true">
+    <exec>
+      <option name="COMMAND" value="C:\Windows\System32\cmd.exe" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="D:/Android" />
+    </exec>
+  </tool>
+  <tool name="D:\SHARE" showInMainMenu="false" showInEditor="false" showInProject="false" showInSearchPopup="false" disabled="false" useConsole="false" showConsoleOnStdOut="false" showConsoleOnStdErr="false" synchronizeAfterRun="true">
+    <exec>
+      <option name="COMMAND" value="C:\Windows\SysWOW64\explorer.exe" />
+      <option name="PARAMETERS" value="D:\SHARE" />
+      <option name="WORKING_DIRECTORY" value="D:/Android" />
+    </exec>
+  </tool>
+  <tool name="htdocs\android" showInMainMenu="false" showInEditor="false" showInProject="false" showInSearchPopup="false" disabled="false" useConsole="false" showConsoleOnStdOut="false" showConsoleOnStdErr="false" synchronizeAfterRun="true">
+    <exec>
+      <option name="COMMAND" value="C:\Windows\SysWOW64\explorer.exe" />
+      <option name="PARAMETERS" value="C:\xampp\htdocs\android" />
+      <option name="WORKING_DIRECTORY" value="D:/Android" />
+    </exec>
+  </tool>
+  <tool name="xampp" showInMainMenu="false" showInEditor="false" showInProject="false" showInSearchPopup="false" disabled="false" useConsole="false" showConsoleOnStdOut="false" showConsoleOnStdErr="false" synchronizeAfterRun="false">
+    <exec>
+      <option name="COMMAND" value="C:\xampp\xampp-control.exe" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="D:/Android" />
+    </exec>
+  </tool>
+  <tool name="SQL" description="Sql queries " showInMainMenu="false" showInEditor="false" showInProject="false" showInSearchPopup="false" disabled="false" useConsole="false" showConsoleOnStdOut="false" showConsoleOnStdErr="false" synchronizeAfterRun="true">
+    <exec>
+      <option name="COMMAND" value="C:\Program Files (x86)\Microsoft Office\Office12\WINWORD.EXE" />
+      <option name="PARAMETERS" value="D:\Android\SQL\sql.docx" />
+      <option name="WORKING_DIRECTORY" value="D:/Android" />
+    </exec>
+  </tool>
+  <tool name="Guide" showInMainMenu="false" showInEditor="false" showInProject="false" showInSearchPopup="false" disabled="false" useConsole="false" showConsoleOnStdOut="false" showConsoleOnStdErr="false" synchronizeAfterRun="false">
+    <exec>
+      <option name="COMMAND" value="C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" />
+      <option name="PARAMETERS" value="https://developer.android.com/guide" />
+      <option name="WORKING_DIRECTORY" value="C:/Program Files (x86)/Google/Chrome/Application" />
+    </exec>
+  </tool>
+</toolSet>

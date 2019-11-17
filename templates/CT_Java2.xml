@@ -1,0 +1,53 @@
+<templateSet group="CT_Java2">
+  <template name="mysql_hashmap" value="HashMap&lt;String, String&gt; hashMap = new HashMap&lt;&gt;();&#10;String sql = &quot;SELECT $wselection$ FROM $table$ WHERE $conndition$&quot;;&#10;hashMap.put(key.PHP_REQUEST_KEY, key.$activityname$_$methodname$);&#10;hashMap.put(&quot;sql&quot;, sql);&#10;&#10;MySql mySql = new MySql($context$, key.PHP_URL, hashMap, true);&#10;mySql.setOnDataLoadListener(new MySql.OnDataLoadListener() {&#10;    @Override&#10;    public void onDataLoaded(String data) {&#10;&#10;        try {&#10;            JSONObject jsonObject = new JSONObject(data);&#10;            JSONArray result = jsonObject.getJSONArray(key.TAG_JSON_ARRAY);&#10;            JSONObject jo = result.getJSONObject(0);&#10;            // todo get and handle data here&#10;            HashMap&lt;String, String&gt; map = new HashMap&lt;&gt;();&#10;            Iterator&lt;String&gt; iter = jo.keys();&#10;            while (iter.hasNext()) {&#10;                String key = iter.next();&#10;                try {&#10;                    String value = jo.getString(key);&#10;                    map.put(key, value);&#10;&#10;                } catch (JSONException e) {&#10;                    Toast.makeText($ctx$.this, e.toString(), Toast.LENGTH_LONG).show();&#10;                    break;&#10;                }&#10;            }&#10;&#10;            T1.setText(map.get(&quot;T1&quot;));&#10;&#10;&#10;        } catch (JSONException e) {&#10;            e.printStackTrace();&#10;        }&#10;&#10;    }&#10;});" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="wselection" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="table" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="conndition" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="activityname" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="false" />
+    <variable name="methodname" expression="methodName()" defaultValue="" alwaysStopAt="false" />
+    <variable name="context" expression="variableOfType(&quot;android.content.Context&quot;)" defaultValue="" alwaysStopAt="false" />
+    <variable name="ctx" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="mysql_arraylist" value="HashMap&lt;String, String&gt; hashMap = new HashMap&lt;&gt;();&#10;        hashMap.put(key.PHP_REQUEST_KEY, key.$activity_name$_$maethod_name$);&#10;        &#10;        MySql mySql = new MySql($ctx$,key.PHP_URL,hashMap,true);&#10;        mySql.setOnDataLoadListener(new MySql.OnDataLoadListener() {&#10;            @Override&#10;            public void onDataLoaded(String data) {&#10;&#10;                List&lt;HashMap&lt;String, String&gt;&gt; list = new ArrayList&lt;&gt;();&#10;&#10;                try {&#10;                    JSONObject jsonObject = new JSONObject(data);&#10;                    JSONArray result = jsonObject.getJSONArray(key.TAG_JSON_ARRAY);&#10;&#10;                    for (int i = 0; i &lt; result.length(); i++) {&#10;&#10;                        HashMap&lt;String, String&gt; hashMap1 = new HashMap&lt;&gt;();&#10;&#10;                        JSONObject jo = result.getJSONObject(i);&#10;&#10;                        Iterator&lt;String&gt; iter = jo.keys();&#10;                        while (iter.hasNext()) {&#10;                            String key = iter.next();&#10;                            try {&#10;                                String value = jo.getString(key);&#10;                                hashMap1.put(key, value);&#10;&#10;                            } catch (JSONException e) {&#10;                                Toast.makeText($context$, e.toString(), Toast.LENGTH_LONG).show();&#10;                                break;&#10;                            }&#10;                        }&#10;                        &#10;                        list.add(hashMap1);&#10;&#10;                    }&#10;&#10;                } catch (JSONException e) {&#10;                    e.printStackTrace();&#10;                }&#10;                &#10;            }&#10;        });" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="activity_name" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="false" />
+    <variable name="maethod_name" expression="methodName()" defaultValue="" alwaysStopAt="false" />
+    <variable name="ctx" expression="variableOfType(&quot;android.content.Context&quot;)" defaultValue="" alwaysStopAt="false" />
+    <variable name="context" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="mysql_toast" value="HashMap&lt;String, String&gt; hashMap = new HashMap&lt;&gt;();&#10;        hashMap.put(key.PHP_REQUEST_KEY, key.$activityname$_$methodname$);&#10;&#10;        MySql mySql = new MySql($ctx1$, key.PHP_URL, hashMap, true);&#10;        mySql.setOnDataLoadListener(new MySql.OnDataLoadListener() {&#10;            @Override&#10;            public void onDataLoaded(String data) {&#10;                Toast.makeText($ctx2$, data, Toast.LENGTH_SHORT).show();&#10;&#10;            }&#10;        });" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="activityname" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="false" />
+    <variable name="methodname" expression="methodName()" defaultValue="" alwaysStopAt="false" />
+    <variable name="ctx1" expression="variableOfType(&quot;android.content.Context&quot;)" defaultValue="" alwaysStopAt="false" />
+    <variable name="ctx2" expression="variableOfType(&quot;android.content.Context&quot;)" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="simpleAdapterSpinner" value="ArrayAdapter&lt;String&gt; adapter = new ArrayAdapter&lt;String&gt;(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.c));&#10;        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);&#10;        C1.setAdapter(adapter);" description="" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="simpleAdapterListView" value="final ArrayAdapter&lt;String&gt; adapter = new ArrayAdapter&lt;String&gt;(this,  &#10;                android.R.layout.simple_list_item_1, android.R.id.text1, listItem);  &#10;        listView.setAdapter(adapter);  &#10;  &#10;        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {  &#10;            @Override  &#10;            public void onItemClick(AdapterView&lt;?&gt; adapterView, View view, int position, long l) {  &#10;                // TODO Auto-generated method stub  &#10;                String value=adapter.getItem(position);  &#10;                Toast.makeText(getApplicationContext(),value,Toast.LENGTH_SHORT).show();  &#10;  &#10;            }  &#10;        });  " description="simpleAdapterListView" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="mysql_list" value="String sql = &quot;SELECT $selection$ FROM $table$ WHERE $condition$&quot;;&#10;HashMap&lt;String, String&gt; hashMap = new HashMap&lt;&gt;();&#10;hashMap.put(key.PHP_REQUEST_KEY, key.$activity_name$_$maethod_name$);&#10;hashMap.put(&quot;sql&quot;, sql);&#10;&#10;MySql mySql = new MySql(this, key.PHP_URL, hashMap, true);&#10;mySql.setOnDataLoadListener(new MySql.OnDataLoadListener() {&#10;    @Override&#10;    public void onDataLoaded(String data) {&#10;&#10;        List&lt;String&gt; list = new ArrayList&lt;&gt;();&#10;&#10;        try {&#10;            JSONObject jsonObject = new JSONObject(data);&#10;            JSONArray result = jsonObject.getJSONArray(key.TAG_JSON_ARRAY);&#10;&#10;            for (int i = 0; i &lt; result.length(); i++) {&#10;&#10;                JSONObject jo = result.getJSONObject(i);&#10;&#10;                Iterator&lt;String&gt; iter = jo.keys();&#10;                while (iter.hasNext()) {&#10;                    String key = iter.next();&#10;                    try {&#10;                        String value = jo.getString(key);&#10;                        list.add(value);&#10;&#10;                    } catch (JSONException e) {&#10;                        Toast.makeText($context$, e.toString(), Toast.LENGTH_LONG).show();&#10;                        break;&#10;                    }&#10;                }&#10;&#10;&#10;            }&#10;            &#10;&#10;        } catch (JSONException e) {&#10;            e.printStackTrace();&#10;        }&#10;&#10;&#10;    }&#10;}); &#10;" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selection" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="table" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="condition" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="activity_name" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="false" />
+    <variable name="maethod_name" expression="methodName()" defaultValue="" alwaysStopAt="false" />
+    <variable name="context" expression="variableOfType(&quot;android.content.Context&quot;)" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+</templateSet>

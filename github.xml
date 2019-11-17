@@ -1,0 +1,7 @@
+<application>
+  <component name="GithubAccounts">
+    <account id="a1dd6893-5e81-4ed6-8735-a2f0a5f59715" name="quantumandroid">
+      <server host="github.com" />
+    </account>
+  </component>
+</application>

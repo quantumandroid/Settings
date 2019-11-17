@@ -1,0 +1,176 @@
+<templateSet group="CT_Java1">
+  <template name="alert" value="AlertDialog.Builder builder = new AlertDialog.Builder($this$);&#10;builder.setTitle(&quot;$Title$&quot;);&#10;builder.setMessage(&quot;$msg$&quot;);&#10;builder.setPositiveButton(&quot;OK&quot;, null);&#10;builder.setNegativeButton(&quot;CANCEL&quot;, null);&#10;AlertDialog dialog = builder.create();&#10;dialog.show();" description="(My_Template) Alert Dialog Box" toReformat="true" toShortenFQNames="true">
+    <variable name="this" expression="variableOfType(&quot;android.content.Context&quot;)" defaultValue="" alwaysStopAt="false" />
+    <variable name="Title" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="msg" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GROOVY" value="false" />
+      <option name="HTML" value="false" />
+      <option name="JAVA_CODE" value="false" />
+      <option name="JAVA_STATEMENT" value="true" />
+      <option name="JSON" value="false" />
+      <option name="KOTLIN" value="false" />
+      <option name="OTHER" value="true" />
+      <option name="XML" value="false" />
+      <option name="c" value="false" />
+      <option name="cpp" value="false" />
+    </context>
+  </template>
+  <template name="alert datePickerDialog" value="//Write code in onclick function&#10;  // Get Current Date&#10;            final Calendar c = Calendar.getInstance();&#10;   /*     todo Declare befor oncreate ..... private int mYear, mMonth, mDay, mHour, mMinute;      */&#10;&#10;  mYear = c.get(Calendar.YEAR);&#10;            mMonth = c.get(Calendar.MONTH);&#10;            mDay = c.get(Calendar.DAY_OF_MONTH);&#10;&#10;&#10;            DatePickerDialog datePickerDialog = new DatePickerDialog(this,&#10;                    new DatePickerDialog.OnDateSetListener() {&#10;&#10;                        @Override&#10;                        public void onDateSet(DatePicker view, int year,&#10;                                              int monthOfYear, int dayOfMonth) {&#10;&#10;                            $textView$txtDate.setText(dayOfMonth + &quot;-&quot; + (monthOfYear + 1) + &quot;-&quot; + year);&#10;&#10;                        }&#10;                    }, mYear, mMonth, mDay);&#10;            datePickerDialog.show();" description="(My_Template) Create date picker dialog" toReformat="false" toShortenFQNames="true">
+    <variable name="textView" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="alert fragment" value="//============Alert Dialog Starts From Here============//&#10;                    //ENTER ACTIVITY FILE NAME BEFORE .this  like MainActivity&#10;                        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());&#10;                        //Uncomment the below code to Set the message and title from the strings.xml file&#10;                        //builder.setMessage(R.string.dialog_message) .setTitle(R.string.dialog_title);&#10;&#10;                    //Setting message &amp; performing action on button click like &quot;Do you want to close this application ?&quot;&#10;                        builder.setMessage(&quot;$AlertBoxInFragment$&quot;)&#10;                                .setCancelable(false)//(if true)  press anywhere on screen excluding alert dialog it will be cancel&#10;                                //set Button name like YES or Ok&#10;                                .setPositiveButton(&quot;$Ok$&quot;, new DialogInterface.OnClickListener() {&#10;                                    public void onClick(DialogInterface dialog, int id) {&#10;                                        //  Action for 'Yes' Button&#10;                                        //finish();//it finish the activivty&#10;                                           $4$Toast.makeText(getActivity(), &quot;ok n&quot;, Toast.LENGTH_SHORT).show();&#10;                                    }&#10;                                })&#10;                                .setNegativeButton(&quot;$no$&quot;, new DialogInterface.OnClickListener() {&#10;                                    public void onClick(DialogInterface dialog, int id) {&#10;                                        //  Action for 'NO' Button&#10;                                        dialog.cancel();// it used to cancel dialog box&#10;                                    }&#10;                                });&#10;                        //Creating dialog box&#10;                        AlertDialog alert = builder.create();&#10;                        //Setting the title manually like &quot;AlertDialogExample&quot;&#10;                        alert.setTitle(&quot;$FragmentAlert$&quot;);&#10;                        alert.show();&#10;                        //==============Alert Dialog End Here==============//" description="(MyTemplate)Alert Box In Fragment" toReformat="false" toShortenFQNames="true">
+    <variable name="AlertBoxInFragment" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="Ok" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="4" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="no" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="FragmentAlert" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="alert timePickerDialog" value="//Write code in onclick function&#10;// Get Current Time&#10;            final Calendar c = Calendar.getInstance();&#10; /*     todo Declare befor oncreate ..... private int mYear, mMonth, mDay, mHour, mMinute;      */&#10;&#10; mHour = c.get(Calendar.HOUR_OF_DAY);&#10;            mMinute = c.get(Calendar.MINUTE);&#10;&#10;            // Launch Time Picker Dialog&#10;            TimePickerDialog timePickerDialog = new TimePickerDialog(this,&#10;                    new TimePickerDialog.OnTimeSetListener() {&#10;&#10;                        @Override&#10;                        public void onTimeSet(TimePicker view, int hourOfDay,&#10;                                              int minute) {&#10;&#10;                            $textVie$txtTime.setText(hourOfDay + &quot;:&quot; + minute);&#10;                        }&#10;                    }, mHour, mMinute, false);&#10;            timePickerDialog.show();" description="(My_Template) Create time picker dialog" toReformat="false" toShortenFQNames="true">
+    <variable name="textVie" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="bdtos" value="BigDecimal bd = new BigDecimal(&quot;10.0001&quot;);&#10;textView.setText(bd.toString()); // prints 10.0001&#10;//or alternatively&#10;BigDecimal bd = nBigDecimal.valueOf(10.0001);&#10;textView.setText (bd.toString()); // prints 10.0001" description="(My_Template) BigDecimal To String" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="bitos" value=" String msg = &quot;Hello there!&quot;;&#10;         BigInteger bi = new BigInteger(msg.getBytes());&#10;         System.out.println(new String(bi.toByteArray())); // prints &quot;Hello there!&quot;" description="(My_Template) BigInteger to String" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="dtos" value="double total = 44;&#10;String total2 = String.valueOf(total);" description="(My_Template) Double To String" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="ftos" value="String s = Float.toString(25.0f);" description="My_Template) Float To String" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="itos" value="String testString = Integer.toString(test);" description="(My_Template) Integer To String Conversion" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="ltos" value="String res=Long.toString(longValue); " description="(My_Template) Long To String" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="menu(optionmenu)" value="@Override&#10;public boolean onCreateOptionsMenu(Menu menu) {&#10;    getMenuInflater().inflate(R.menu.$menu_main$, menu);&#10;    return true;&#10;}&#10;&#10;@Override&#10;public boolean onOptionsItemSelected(MenuItem item) {&#10;&#10;    switch (item.getItemId()) {&#10;&#10;        case R.id.action_$settings$:&#10;            //TODO add menu action here&#10;            $action$&#10;            return true;&#10;&#10;        default:&#10;&#10;            return super.onOptionsItemSelected(item);&#10;    }&#10;&#10;}&#10;" description="Create Option Menu" toReformat="true" toShortenFQNames="true">
+    <variable name="menu_main" expression="camelCase(&quot;menu_main&quot;)" defaultValue="menu_main" alwaysStopAt="true" />
+    <variable name="settings" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="action" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="onclick" value="$button$.setOnClickListener(new View.OnClickListener()&#10;{&#10;    @Override&#10;    public void onClick(View v)&#10;    {&#10;        // TODO Auto-generated method stub&#10;       $Write_Code_For_Click_Event$&#10;    }&#10;});" description="(My_Template) OnClickListener" toReformat="false" toShortenFQNames="true">
+    <variable name="button" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="Write_Code_For_Click_Event" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="onclick fragment" value="Button $b$button = (Button) rootView.findViewById(R.id.$id$); // you have to use rootview object..&#10;            button.setOnClickListener(new OnClickListener() {           &#10;&#10;                  @Override&#10;                  public void onClick(View v) &#10;                  {&#10;                      $S$Toast.makeText(getActivity(), &quot;Hello World&quot;, Toast.LENGTH_LONG).show();&#10;                  }    &#10;                });" description="onClickListener inFragment" toReformat="false" toShortenFQNames="true">
+    <variable name="b" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="id" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="S" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="onlongclick" value="$button$.setOnLongClickListener(new View.OnLongClickListener() {&#10;&#10;    @Override&#10;    public boolean onLongClick(View v) {&#10;        // TODO Auto-generated method stub&#10;      $Write$  Toast.makeText(getBaseContext(), &quot;Long Clicked&quot;, Toast.LENGTH_SHORT).show();&#10;        return true;&#10;    }&#10;});" description="(My_Template) OnLongClickListener" toReformat="false" toShortenFQNames="true">
+    <variable name="button" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="Write" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="stobd" value=" String total=&quot;0.0&quot;;&#10; BigDecimal sPrice = new BigDecimal(total);" description="My_Template) String To BigDecimal" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="stobi" value=" String myInt = “1234”;&#10; BigInteger number = new BigInteger(myInt);" description="(My_Template) String To BigInteger" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="stod" value="double d=Double.parseDouble(myString);" description="(My_Template) String To Double" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="stof" value="float f = Float.parseFloat(&quot;25&quot;);" description="My_Template) String To Float" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="stoi" value="   int i =Integer.parseInt(et.getText().toString());" description="(My_Template) String To Integer" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="stol" value="long l = Long.parseLong(stringValue);" description="(My_Template) String To Long" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="toast fragment" value="Toast.makeText(getActivity(), &quot;ok n&quot;, Toast.LENGTH_SHORT).show();" description="(MyTemplate) Toast  In fragment" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="getstring" value="$string$ = getResources().getString(R.string.$hello_world$);" description="(My_Template) Get String Resources from App Resources" toReformat="false" toShortenFQNames="true">
+    <variable name="string" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="hello_world" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="setstring" value="R.string.$hello_world$" description="(My_Template) supply a string resource to a method that requires a string" toReformat="false" toShortenFQNames="true">
+    <variable name="hello_world" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="intent" value="startActivity(new Intent($context$,$Activity$.class));" description="Call Another Activity" toReformat="true" toShortenFQNames="true">
+    <variable name="context" expression="variableOfType(&quot;android.content.Context&quot;)" defaultValue="" alwaysStopAt="false" />
+    <variable name="Activity" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="progressdialog" value=" progressDialog = ProgressDialog.show(this, &quot;$TITLE$&quot;, &quot;$MESSAGE$&quot;);" description="My_Template) Progress Dialog" toReformat="false" toShortenFQNames="true">
+    <variable name="TITLE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="MESSAGE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="ctx" value="$contex$" description="Get Context" toReformat="true" toShortenFQNames="true">
+    <variable name="contex" expression="variableOfType(&quot;android.content.Context&quot;)" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="alert_dialog" value="dialog = new alert(new View.OnClickListener() {&#10;                    @Override&#10;                    public void onClick(View v) {&#10;                        $method$;&#10;                        if (dialog != null) {&#10;                            dialog.dismiss();&#10;                        }&#10;                    }&#10;                });&#10;                dialog.show(getFragmentManager(), &quot;Are you sure You want to $Update$ ?&quot;);" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="method" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="Update" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+</templateSet>

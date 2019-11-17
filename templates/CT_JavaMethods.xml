@@ -1,0 +1,22 @@
+<templateSet group="CT_JavaMethods">
+  <template name="splashScreen" value="// Display welcome screen&#10;private void splashScreen(final Context context1, final Class&lt;?&gt; NextActivity, int TIME_IN_MILLIS) {&#10;&#10;    ((Activity) context1).getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN);&#10;    ((Activity) context1).getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);&#10;&#10;    new Handler().postDelayed(new Runnable() {&#10;&#10;        @Override&#10;        public void run() {&#10;&#10;            context1.startActivity(new Intent(context1, NextActivity));&#10;            ((Activity) context1).finish();&#10;        }&#10;&#10;    }, TIME_IN_MILLIS);&#10;&#10;}" description="splashScreen()" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="doubleBackExit" value="    public static boolean BACK_PRESSED = false;&#10;    private void doubleBackExit(final Context context) {&#10;&#10;        if (BACK_PRESSED) {&#10;            &#10;            ((Activity) context).finishAffinity();&#10;            return;&#10;        }&#10;&#10;        BACK_PRESSED = true;&#10;        Toast.makeText(context, &quot;Press again to exit&quot;, Toast.LENGTH_LONG).show();&#10;&#10;        new Handler().postDelayed(new Runnable() {&#10;&#10;            @Override&#10;            public void run() {&#10;                BACK_PRESSED = false;&#10;            }&#10;        }, 3000);&#10;&#10;    }" description="doubleBackExit()" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="exit" value="// Close Application&#10;    private void exit(Context context) {&#10;&#10;        ((Activity) context).finishAffinity();&#10;    }" description="exitApplication()" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="getInstalledApplications" value=" private List&lt;ApplicationInfo&gt; getInstalledApplications(){&#10;&#10;        ApplicationInfo applicationInfo = mAppList.get(0);&#10;&#10;        String name = (String) applicationInfo.loadLabel(getPackageManager());&#10;        Drawable drawable = applicationInfo.loadIcon(getPackageManager());&#10;        String str = applicationInfo.packageName;&#10;&#10;        return getPackageManager().getInstalledApplications(0);&#10;    }" description="get list of installd applications" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+</templateSet>
